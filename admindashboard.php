@@ -33,23 +33,23 @@
     <div class="topheader">
         <div class="left">
             <h1 class="logo">App <span>Admin</span></h1>
-            <span class="slogan">admin </span>
+<!--            <span class="slogan">admin </span>-->
             
-            <div class="search">
-                <form action="#" method="post">
-                    <input type="text" name="keyword" id="keyword" value="Enter keyword(s)" />
-                    <button class="submitbutton"></button>
-                </form>
-            </div><!--search-->
+<!--            <div class="search">-->
+<!--                <form action="#" method="post">-->
+<!--                    <input type="text" name="keyword" id="keyword" value="Enter keyword(s)" />-->
+<!--                    <button class="submitbutton"></button>-->
+<!--                </form>-->
+<!--            </div><!--search-->-->
             
             <br clear="all" />
             
         </div><!--left-->
         
         <div class="right">
-            <div class="notification">
-                <a class="count" href="ajax/notifications.html"><span>9</span></a>
-            </div>
+<!--            <div class="notification">-->
+<!--                <a class="count" href="ajax/notifications.html"><span>9</span></a>-->
+<!--            </div>-->
             <div class="userinfo">
                 <img src="images/thumbs/avatar.png" alt="" />
                 <span>Akash Karthick</span>
@@ -84,7 +84,7 @@
     
     <div class="header">
         <ul class="headermenu">
-            <li class="current"><a href="dashboard.html"><span class="icon icon-flatscreen"></span>Dashboard</a></li>
+            <li class="current"><a href="admindashboard.php"><span class="icon icon-flatscreen"></span>Dashboard</a></li>
             <!-- <li><a href="manageblog.html"><span class="icon icon-pencil"></span>Manage Blog</a></li> -->
             <!-- <li><a href="messages.html"><span class="icon icon-message"></span>Messages</a></li>
             <li><a href="reports.html"><span class="icon icon-chart"></span>Reports</a></li> -->
@@ -106,116 +106,99 @@
         
     </div><!--header-->
     
-    <!-- <div class="vernav2 iconmenu">
-        <ul>
-            <li><a href="#formsub" class="editor">Forms</a>
-                <span class="arrow"></span>
-                <ul id="formsub">
-                    <li><a href="forms.html">Basic Form</a></li>
-                    <li><a href="wizard.html">Wizard</a></li>
-                    <li><a href="editor.html">WYSIWYG</a></li>
-                </ul>
-            </li>
-            <li><a href="filemanager.html" class="gallery">File Manager</a></li>
-            <li><a href="elements.html" class="elements">Elements</a></li>
-            <li><a href="widgets.html" class="widgets">Widgets</a></li>
-            <li><a href="calendar.html" class="calendar">Calendar</a></li>
-            <li><a href="support.html" class="support">Customer Support</a></li>
-            <li><a href="typography.html" class="typo">Typography</a></li>
-            <li><a href="tables.html" class="tables">Tables</a></li>
-            <li><a href="buttons.html" class="buttons">Buttons &amp; Icons</a></li>
-            <li><a href="#error" class="error">Error Pages</a>
-                <span class="arrow"></span>
-                <ul id="error">
-                    <li><a href="notfound.html">Page Not Found</a></li>
-                    <li><a href="forbidden.html">Forbidden Page</a></li>
-                    <li><a href="internal.html">Internal Server Error</a></li>
-                    <li><a href="offline.html">Offline</a></li>
-                </ul>
-            </li>
-            <li><a href="#addons" class="addons">Addons</a>
-                <span class="arrow"></span>
-                <ul id="addons">
-                    <li><a href="newsfeed.html">News Feed</a></li>
-                    <li><a href="profile.html">Profile Page</a></li>
-                    <li><a href="productlist.html">Product List</a></li>
-                    <li><a href="photo.html">Photo/Video Sharing</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a class="togglemenu"></a>
-        <br /><br />
-    </div><!--leftmenu--> 
-        
+
+
     <div class="">
-    
+
         <div class="pageheader">
-            <h1 class="pagetitle">Dashboard</h1>
-            <span class="pagedesc">View working of APP</span>
-            
+
             <ul class="hornav">
-                <li class="current"><a href="#requested">Requested</a></li>
-                <li><a href="#accepted">Accepted</a></li>
-                <li><a href="#admitted">Admitted</a></li>
+                <li class="current"><a href="#updates">Requested</a></li>
+                <li><a href="#adddriver">Accepted</a></li>
+                <li><a href="#editdriver">Admitted</a></li>
             </ul>
         </div><!--pageheader-->
-        
-        <div id="contentwrapper" class="contentwrapper">
-        
-            <div id="requested" class="subcontent">
 
-                    <table style="width:50%">
-  <tr>
-    <th>UserName</th>
-    <th>UserId</th> 
-    <th>Location</th>
-  </tr>
-</table>
-                     
-                     
-                    
+        <div id="contentwrapper" class="contentwrapper">
+
+            <div id="updates" class="subcontent">
+                <!--<div class="notibar announcement">-->
+                <!--<a class="close"></a>-->
+                <!--<h3>Announcement</h3>-->
+                <!--<p>A new patient has been added.</p>-->
+                <!--</div>&lt;!&ndash; notification announcement &ndash;&gt;-->
+
+                <div class="">
+
+
+                    <br clear="all" />
+
+
+                    <br clear="all" />
+
+                    <table style="width: 50%" cellpadding="0" cellspacing="0" border="0" class="stdtable overviewtable">
+                        <tr>
+                            <th>UserName</th>
+                            <th>UserId</th>
+                            <th>Location</th>
+                        </tr>
+                        <tr>
+                            <td>Raj</td>
+                            <td>1</td>
+                            <td>12.234 34.3434</td>
+                        </tr>
+                    </table>
+
+
+
+                </div><!--two_third dashboard_left -->
+
+
+
+
             </div><!-- #updates -->
-            
-            <div id="accepted" class="subcontent">
-                <table style="width:80%">
-  <tr>
-    <th>UserName</th>
-    <th>UserId</th> 
-    <th>Location</th>
-    <th>DriverName</th>
-    <th>DriverId</th>
-    <th>DriverLocation</th>
-    <th>DriverContact</th>
-    <th>ServiceLocation</th>
-  </tr>
-</table>
-                
-            </div><!-- #activities -->
-            <div id="admitted" class="subcontent">
-                <table style="width:100%">
-  <tr>
-    <th>UserName</th>
-    <th>UserId</th> 
-    <th>Location</th>
-    <th>DriverName</th>
-    <th>DriverId</th>
-    <th>DriverLocation</th>
-    <th>DriverContact</th>
-    <th>ServiceLocation</th>
-    <th>HospitalName</th>
-    <th>HospitalLocation</th>
-  </tr>
-</table>
-                
-            </div><!-- #admitted -->
-        
+
+            <div id="adddriver" class="subcontent" style="display: none;">
+
+                <table style="width:80%"  cellpadding="0" cellspacing="0" border="0" class="stdtable overviewtable">
+                    <tr>
+                        <th>UserName</th>
+                        <th>UserId</th>
+                        <th>Location</th>
+                        <th>DriverName</th>
+                        <th>DriverId</th>
+                        <th>DriverLocation</th>
+                        <th>DriverContact</th>
+                        <th>ServiceLocation</th>
+                    </tr>
+                </table>                &nbsp;
+            </div><!-- #adddriver -->
+
+            <div id="editdriver" class="subcontent" style="display: none;">
+                <table style="width:100%"  cellpadding="0" cellspacing="0" border="0" class="stdtable overviewtable">
+                    <tr>
+                        <th>UserName</th>
+                        <th>UserId</th>
+                        <th>Location</th>
+                        <th>DriverName</th>
+                        <th>DriverId</th>
+                        <th>DriverLocation</th>
+                        <th>DriverContact</th>
+                        <th>ServiceLocation</th>
+                        <th>HospitalName</th>
+                        <th>HospitalLocation</th>
+                    </tr>
+                </table>
+            </div><!-- #editdriver -->
+
+
         </div><!--contentwrapper-->
-        
+
         <br clear="all" />
-        
+
     </div><!-- centercontent -->
-    
-    
+
+
 </div><!--bodywrapper-->
 
 </body>

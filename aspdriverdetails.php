@@ -72,9 +72,9 @@
                     <span class="email">kiran@gmail.com</span>
                     <ul>
                         <!--<li><a href="editprofile.html">Edit Profile</a></li>-->
-                        <li><a href="aspsettings.html">Account Settings</a></li>
+                        <li><a href="aspsettings.php">Account Settings</a></li>
                         <!--<li><a href="help.html">Help</a></li>-->
-                        <li><a href="index.html">Sign Out</a></li>
+                        <li><a href="index.php">Sign Out</a></li>
                     </ul>
                 </div><!--userdata-->
             </div><!--userinfodrop-->
@@ -84,9 +84,9 @@
 
     <div class="header">
         <ul class="headermenu">
-            <li><a href="aspdashboard.html">Dashboard</a></li>
-            <li><a href="aspambulancedetails.html">Ambulance Details</a></li>
-            <li class="current"><a href="aspdriverdetails.html">Driver Details</a></li>
+            <li><a href="aspdashboard.php">Dashboard</a></li>
+            <li><a href="aspambulancedetails.php">Ambulance Details</a></li>
+            <li class="current"><a href="aspdriverdetails.php">Driver Details</a></li>
             <!--<li><a href="reports.html">Reports</a></li>-->
         </ul>
         <!--<ul class="shortcuts">-->
