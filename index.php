@@ -1,15 +1,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php
-use backendless\Backendless;
-include "PHP-SDK-master/backendless/autoload.php";
- 
-Backendless::initApp('DAE8B0A2-C210-7D34-FF57-974A02255000', 'F522B9C6-22DD-333A-FFC0-4D9757128600', 'v1');
-$user = Backendless::$UserService->login('kbhitheshsai@gmail.com', 'ninjasaga');
 
-
-?>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -60,7 +52,7 @@ $user = Backendless::$UserService->login('kbhitheshsai@gmail.com', 'ninjasaga');
                 </div><!--loginf-->
             </div><!--nopassword-->
             
-            <form id="login" action="admindashboard.php" method="post">
+            <form id="login" action="login.php" method="post">
             	
                 <div class="username">
                 	<div class="usernameinner">
@@ -74,8 +66,8 @@ $user = Backendless::$UserService->login('kbhitheshsai@gmail.com', 'ninjasaga');
                     </div>
                 </div>
                 
-                <button>Sign In</button>
-                
+                <button name="signin">Sign In</button>
+                 
                 <div class="keep"><input type="checkbox" /> Keep me logged in</div>
             
             </form>
