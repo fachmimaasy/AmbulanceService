@@ -141,11 +141,13 @@
                             <th>UserName</th>
                             <th>UserId</th>
                             <th>Location</th>
+                            <th>User Requested Time</th>
                         </tr>
                         <tr>
                             <td><h5>Raj</h5></td>
                             <td><h5>1</h5></td>
                             <td><h5>12.234 34.3434</h5></td>
+                            <td><h5>12:23</h5></td>
                         </tr>
                     </table>
 
@@ -170,6 +172,8 @@
                         <th>DriverLocation</th>
                         <th>DriverContact</th>
                         <th>ServiceLocation</th>
+                        <th>User Requested Time</th>
+                        <th>Request Accepted Time</th>
                     </tr>
                     <tr>
                         <td><h5>Raj</h5></td>
@@ -180,6 +184,8 @@
                         <td><h5>23.3434 34.3434</h5></td>
                         <td><h5>9876543210</h5></td>
                         <td><h5>34.3434 34.3434</h5></td>
+                        <td><h5>12:23</h5></td>
+                        <td><h5>12:50</h5></td>
                     </tr>
                 </table>                &nbsp;
             </div><!-- #adddriver -->
@@ -197,6 +203,10 @@
                         <th>ServiceLocation</th>
                         <th>HospitalName</th>
                         <th>HospitalLocation</th>
+                        <th>User Requested Time</th>
+                        <th>Request Accepted Time</th>
+                        <th>Admit Time</th>
+                        <th>Overall Processed Time</th>
                     </tr>
                     <tr>
                         <td><h5>Raj</h5></td>
@@ -209,6 +219,10 @@
                         <td><h5>34.3434 34.3434</h5></td>
                         <td><h5>Hosp</h5></td>
                         <td><h5>34.345 45.4545</h5></td>
+                        <td><h5>12:23</h5></td>
+                        <td><h5>12:50</h5></td>
+                        <td><h5>1:30</h5></td>
+                        <td><h5>67 min</h5></td>
                     </tr>
                 </table>
             </div><!-- #editdriver -->
