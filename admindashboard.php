@@ -143,9 +143,9 @@
                             <th>Location</th>
                         </tr>
                         <tr>
-                            <td>Raj</td>
-                            <td>1</td>
-                            <td>12.234 34.3434</td>
+                            <td><h5>Raj</h5></td>
+                            <td><h5>1</h5></td>
+                            <td><h5>12.234 34.3434</h5></td>
                         </tr>
                     </table>
 
@@ -171,6 +171,16 @@
                         <th>DriverContact</th>
                         <th>ServiceLocation</th>
                     </tr>
+                    <tr>
+                        <td><h5>Raj</h5></td>
+                        <td><h5>1</h5></td>
+                        <td><h5>12.2134 34.343</h5></td>
+                        <td><h5>Kiran</h5></td>
+                        <td><h5>01</h5></td>
+                        <td><h5>23.3434 34.3434</h5></td>
+                        <td><h5>9876543210</h5></td>
+                        <td><h5>34.3434 34.3434</h5></td>
+                    </tr>
                 </table>                &nbsp;
             </div><!-- #adddriver -->
 
@@ -187,6 +197,18 @@
                         <th>ServiceLocation</th>
                         <th>HospitalName</th>
                         <th>HospitalLocation</th>
+                    </tr>
+                    <tr>
+                        <td><h5>Raj</h5></td>
+                        <td><h5>1</h5></td>
+                        <td><h5>12.2134 34.343</h5></td>
+                        <td><h5>Kiran</h5></td>
+                        <td><h5>01</h5></td>
+                        <td><h5>23.3434 34.3434</h5></td>
+                        <td><h5>9876543210</h5></td>
+                        <td><h5>34.3434 34.3434</h5></td>
+                        <td><h5>Hosp</h5></td>
+                        <td><h5>34.345 45.4545</h5></td>
                     </tr>
                 </table>
             </div><!-- #editdriver -->
