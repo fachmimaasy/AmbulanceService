@@ -35,7 +35,6 @@
         <div class="left">
             <h1 class="logo">Hospital <span>Admin</span></h1>
             <!--<span class="slogan"></span>-->
-            
             <!--<div class="search">-->
             	<!--<form action="#" method="post">-->
                 	<!--<input type="text" name="keyword" id="keyword" value="Enter keyword(s)" />-->
@@ -53,7 +52,7 @@
         	<!--</div>-->
             <div class="userinfo">
             	<img src="images/thumbs/avatar.png" alt="" />
-                <span>Dr.Akash</span>
+                <span>Juan Dela Cruz</span>
             </div><!--userinfo-->
             
             <div class="userinfodrop">
@@ -69,12 +68,12 @@
                     </div>
                 </div><!--avatar-->
                 <div class="userdata">
-                	<h4>Dr.Akash karthick</h4>
-                    <span class="email">karthickakash17@gmail.com</span>
+                	<h4>Akash karthick</h4>
+                    <span class="email">youremail@yourdomain.com</span>
                     <ul>
-                    	<!-- <li><a href="editprofile.html">Edit Profile</a></li> -->
+                    	<li><a href="editprofile.html">Edit Profile</a></li>
                         <li><a href="accountsettings.html">Account Settings</a></li>
-                        <!-- <li><a href="help.html">Help</a></li> -->
+                        <li><a href="help.html">Help</a></li>
                         <li><a href="index.html">Sign Out</a></li>
                     </ul>
                 </div><!--userdata-->
@@ -85,8 +84,8 @@
     
     <div class="header">
     	<ul class="headermenu">
-        	<li><a href="hospdashboard.html"><span class="icon icon-flatscreen"></span>Dashboard</a></li>
-            <li class="current"><a href="hospprofile.html"><span class="icon icon-pencil"></span>Profile</a></li>
+        	<li class="current"><a href="dashboard.php"><span class="icon icon-flatscreen"></span>Dashboard</a></li>
+            <li><a href="hospprofile.php"><span class="icon icon-pencil"></span>Profile</a></li>
             <!-- <li><a href="messages.html"><span class="icon icon-message"></span>Messages</a></li>
             <li><a href="reports.html"><span class="icon icon-chart"></span>Reports</a></li> -->
         </ul>
@@ -103,7 +102,6 @@
                 </div> --><!--one_half last-->
             </div><!--earnings-->
         </div><!--headerwidget-->
-
         
         
     </div><!--header-->
@@ -150,7 +148,7 @@
     </div><!--leftmenu--> 
         
     <div class="">
-    <!-- 
+    
         <div class="pageheader">
             <h1 class="pagetitle">Dashboard</h1>
             <span class="pagedesc"></span>
@@ -159,7 +157,7 @@
                 <li class="current"><a href="#updates">New Updates</a></li>
                 <li><a href="#activities">All</a></li>
             </ul>
-        </div> --><!--pageheader-->
+        </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
         
@@ -528,28 +526,6 @@
     
     
 </div><!--bodywrapper-->
-   <table style="width:80%" align="left">
-  <tr>
-    <th align="">Hospital Name :</th>
-    <td align="">Akash Hospitals</td>
-  </tr>
-  <tr>
-    <th align="">Locatiom :</th>
-    <td align="">Avadi</td>
-  </tr>
-  <tr>
-    <th align="">Specialities :</th>
-    <td align="">Ortho</td>
-  </tr>
-  <tr>
-    <th align=""></th>
-    <td align="">Multi speciality</td>
-  </tr>
-  <tr>
-    <th align=""></th>
-    <td align="">Cardiac</td>
-  </tr>
-</table>
 
 </body>
 
