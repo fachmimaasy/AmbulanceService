@@ -1,11 +1,26 @@
+<?php
+use backendless\Backendless;
+use backendless\model\BackendlessUser;
+use backendless\model\Data;
 
+include "PHP-SDK-master/backendless/autoload.php";
+
+Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
+$user = Backendless::$Persistence->of( 'hospital')->find( );
+$array=(array)$user;
+$data=(array_column($array, 'data'));
+//$user1 = Backendless::$Persistence->of( 'userdata')->find( );
+//$array1=(array)$user1;
+//$data1=(array_column($array, 'data1'));
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dashboard | Hospital Admin</title>
+<title>Profile | Hospital Admin</title>
 <link rel="stylesheet" href="css/style.default.css" type="text/css" />
 <script type="text/javascript" src="js/plugins/jquery-1.7.min.js"></script>
 <script type="text/javascript" src="js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
@@ -186,7 +201,7 @@
             <form class="stdform stdform2" method="post" action="#">
                 <p>
                     <label>Hospital Name : </label>
-                    <span class="field">GKM Hospital</span>
+                    <span class="field"><?php echo $data[0]['name'] ?></span>
                 </p>
 
                 <p>

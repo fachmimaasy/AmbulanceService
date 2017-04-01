@@ -66,7 +66,7 @@ if($user_status=="asp")
 }
 if($user_status=="hosp")
 {
-	header("location: hospdashboard.html");
+	header("location: hospdashboard.php");
 }
 
 
