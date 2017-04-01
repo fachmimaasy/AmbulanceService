@@ -17,24 +17,24 @@ Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E
    $data=(array_column($array, 'data'));
   //$offset=(array_column($data, 0));
 // $offset1=(array_column($offset, 1));
-  echo "<br><br>";
-   print($data[0][0]['user_name']);
-   echo "<br><br>";
-   echo "<br><br>";
+ // echo "<br><br>";
+   //print($data[0][0]['user_name']);
+   //echo "<br><br>";
+   //echo "<br><br>";
 
-   $user_id=$data[0][0]['user_name'];    
-   $user_name=$data[0][0]['user_name']; 
-   $user_loc=$data[0][0]['user_loc'];
-   //$req_time=$data[0][0]['user_time'];
-   $hos_name=$data[0][0]['user_name'];
-   $hos_loc=$data[0][0]['hos_loc'];
-   $driver_loc=$data[0][0]['driver_loc'];
-   $driver_id=$data[0][0]['driver_id'];
-   $driver_name=$data[0][0]['driver_name'];
-   $accept_time=$data[0][0]['accept_time'];
-   $admit_time=$data[0][0]['admit_time'];
-   $asp_loc=$data[0][0]['asp_loc'];
-     print($user_name);
+   // $user_id=$data[0][0]['user_id'];    
+   // $user_name=$data[0][1]['user_name']; 
+   // $user_loc=$data[0][0]['user_loc'];
+   // $req_time=$data[0][0]['req_time'];
+   // $hos_name=$data[0][0]['user_name'];
+   // $hos_loc=$data[0][0]['hos_loc'];
+   // $driver_loc=$data[0][0]['driver_loc'];
+   // $driver_id=$data[0][0]['driver_id'];
+   // $driver_name=$data[0][0]['driver_name'];
+   // $accept_time=$data[0][0]['accept_time'];
+   // $admit_time=$data[0][0]['admit_time'];
+   // $asp_loc=$data[0][0]['asp_loc'];
+   //  print($user_name);
 
 ?>
 
@@ -179,14 +179,19 @@ Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E
                             <th>UserId</th>
                             <th>Location</th>
                         </tr>
+                 <?php foreach ($data[0] as $key) {?>
+            
+                
                         <tr>
-                            <td><h5><?php echo $user_name?></h5></td>
-                            <td><h5>1</h5></td>
-                            <td><h5>12.234 34.3434</h5></td>
+
+                            <td><h5> <?php echo $key['user_name']; ?></h5></td>
+                            <td><h5><?php echo $key['user_id'];  ?></h5></td>
+                            <td><h5><?php echo $key['user_loc'];  ?></h5></td>
                         </tr>
+                          <?php  } ?>
                     </table>
 
-
+                  
 
                 </div><!--two_third dashboard_left -->
 
@@ -208,16 +213,19 @@ Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E
                         <th>DriverContact</th>
                         <th>ServiceLocation</th>
                     </tr>
+                    <?php foreach ($data[0] as $key) {?>
                     <tr>
-                        <td><h5>Raj</h5></td>
-                        <td><h5>1</h5></td>
-                        <td><h5>12.2134 34.343</h5></td>
-                        <td><h5>Kiran</h5></td>
-                        <td><h5>01</h5></td>
-                        <td><h5>23.3434 34.3434</h5></td>
-                        <td><h5>9876543210</h5></td>
-                        <td><h5>34.3434 34.3434</h5></td>
+                        <td><h5><?php echo $key['user_name']; ?>   </h5></td>
+                        <td><h5><?php echo $key['user_id'];   ?>    </h5></td>
+                        <td><h5><?php echo $key['user_loc'];  ?>   </h5></td>
+                        <td><h5><?php echo $key['driver_loc']; ?>  </h5></td>
+                        <td><h5><?php echo $key['driver_id']; ?>    </h5></td>
+                        <td><h5><?php echo $key['driver_name']; ?></h5></td>
+                        <td><h5><?php echo $key['drivercontact']; ?></h5></td>
+                        <td><h5><?php echo $key['asp_loc']; ?></h5></td>
+                        
                     </tr>
+                    <?php }?>
                 </table>                &nbsp;
             </div><!-- #adddriver -->
 
@@ -235,18 +243,21 @@ Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E
                         <th>HospitalName</th>
                         <th>HospitalLocation</th>
                     </tr>
+                <?php foreach ($data[0] as $key) {?>
+
                     <tr>
-                        <td><h5>Raj</h5></td>
-                        <td><h5>1</h5></td>
-                        <td><h5>12.2134 34.343</h5></td>
-                        <td><h5>Kiran</h5></td>
-                        <td><h5>01</h5></td>
-                        <td><h5>23.3434 34.3434</h5></td>
-                        <td><h5>9876543210</h5></td>
-                        <td><h5>34.3434 34.3434</h5></td>
-                        <td><h5>Hosp</h5></td>
-                        <td><h5>34.345 45.4545</h5></td>
+                       <td><h5><?php echo $key['user_name']; ?>   </h5></td>
+                        <td><h5><?php echo $key['user_id'];   ?>    </h5></td>
+                        <td><h5><?php echo $key['user_loc'];  ?>   </h5></td>
+                        <td><h5><?php echo $key['driver_loc']; ?>  </h5></td>
+                        <td><h5><?php echo $key['driver_id']; ?>    </h5></td>
+                        <td><h5><?php echo $key['driver_name']; ?></h5></td>
+                        <td><h5><?php echo $key['drivercontact']; ?></h5></td>
+                        <td><h5><?php echo $key['asp_loc']; ?></h5></td>
+                        <td><h5><?php echo $key['hos_name']; ?></h5></td>
+                        <td><h5><?php echo $key['hos_loc']; ?></h5></td>
                     </tr>
+                    <?php }?>
                 </table>
             </div><!-- #editdriver -->
 
