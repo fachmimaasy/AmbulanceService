@@ -1,6 +1,7 @@
 ob_start();
 <?php 
 
+session_start();
 use backendless\Backendless;
 include "PHP-SDK-master/backendless/autoload.php";
 
@@ -55,10 +56,20 @@ echo "<br>";echo "<br>";
 
 
 
-$user_status=$array["user_status"];	
+$user_status=$array["user_status"];
+
+    Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
+    $user = Backendless::$Persistence->of( 'Users')->find( );
+    $array=(array)$user;
+    $data=(array_column($array, 'data'));
+
+    print_r($data[0][0]['ownerId']);
+
+    $_SESSION['ownerid']=$data[0][0]['ownerId'];
+//    $var=$data[0]['ownerId'];
 if($user_status=="admin")
 {
-	header("location: admindashboard.php");
+	header("Location: admindashboard.php");
 }
 if($user_status=="asp")
 {

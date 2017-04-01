@@ -1,12 +1,13 @@
 <?php
+session_start();
 use backendless\Backendless;
 use backendless\model\BackendlessUser;
 use backendless\model\Data;
-
+$_SESSION['ownerid'];
 include "PHP-SDK-master/backendless/autoload.php";
 
 Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
-$user = Backendless::$Persistence->of( 'user_history')->find( );
+$user = Backendless::$Persistence->of( 'userdata')->find( );
 $array=(array)$user;
 $data=(array_column($array, 'data'));
 $user1 = Backendless::$Persistence->of( 'userdata')->find( );
@@ -223,7 +224,7 @@ $data1=(array_column($array, 'data1'));
                             <td><h5><?php echo $r['medical_illness'] ?></h5></td>
                             <td><h5><?php echo $r['medication'] ?></h5></td>
                             <td><h5><?php echo $r['contact_mem'] ?></h5></td>
-                            <td><h5><?php echo $r['maritial_status'] ?></h5></td>
+                            <td><h5><?php echo $r['marital_status'] ?></h5></td>
                         </tr>
                         <?php
                     }

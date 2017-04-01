@@ -1,8 +1,9 @@
 <?php
+session_start();
 use backendless\Backendless;
 use backendless\model\BackendlessUser;
 use backendless\model\Data;
-
+$d=$_SESSION['ownerid'];
 include "PHP-SDK-master/backendless/autoload.php";
 
 Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
@@ -162,7 +163,7 @@ $data=(array_column($array, 'data'));
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
-    </div><!--leftmenu--> 
+    </div><!--leftmenu-->
         
     <div class="">
 
