@@ -1,87 +1,39 @@
-ob_start();
 <?php
-
 use backendless\Backendless;
+use backendless\model\BackendlessUser;
+use backendless\model\Data;
+
 include "PHP-SDK-master/backendless/autoload.php";
 
-
-if(isset($_POST['signin'])){
-
-
-
-    $username=$_POST['username'];
-
-    $password=$_POST['password'];
-
-
-
-
-
-    Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', '6EE6BD0B-D8A4-3F2D-FF33-6258770A4800', 'v1');
-
-
-    try{
-
-        $user = Backendless::$UserService->login($username, $password );
-
-        $user=Backendless::$UserService->getCurrentUser();;
-
-
-// $contact["name"];
-
-
-
-
-//$con=new Contact($user);
-        $array=(array)$user;
+Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
+$user = Backendless::$Persistence->of( 'user_history')->find( );
+$array=(array)$user;
 //print_r($array);
 
-        echo "<br>";echo "<br>";
-        echo "<br>";echo "<br>";
 
+// echo($array['data']);
+$data=(array_column($array, 'data'));
+//$offset=(array_column($data, 0));
+// $offset1=(array_column($offset, 1));
+//echo "<br><br>";
+//print($data[0][0]['user_name']);
+$count=count($data[0]);
+//echo "<br><br>";
+//echo "<br><br>";
 
-
-        // $data=(array_column($array, "date"));
-
-        // print_r($data);
-// echo count($data);
-// echo "<br>";echo "<br>";
-// echo "<br>";echo "<br>";
-// echo count($data[0]);
-// echo "<br>";echo "<br>";
-// echo "<br>";echo "<br>";
-//echo "correct";
-//}
-
-
-
-        $user_status=$array["user_status"];
-        if($user_status=="admin")
-        {
-            header("location: admindashboard.php");
-        }
-        if($user_status=="asp")
-        {
-            header("location: aspdashboard.php");
-        }
-        if($user_status=="hosp")
-        {
-            header("location: hospdashboard.html");
-        }
-
-
-
-    }
-    catch(Exception $e){
-        header("location: index.php");
-
-        echo "incorrect";
-
-
-    }
-
-
-}
+$user_id=$data[0][0]['user_name'];
+$user_name=$data[0][0]['user_name'];
+$user_loc=$data[0][0]['user_loc'];
+//$req_time=$data[0][0]['user_time'];
+$hos_name=$data[0][0]['user_name'];
+$hos_loc=$data[0][0]['hos_loc'];
+$driver_loc=$data[0][0]['driver_loc'];
+$driver_id=$data[0][0]['driver_id'];
+$driver_name=$data[0][0]['driver_name'];
+$accept_time=$data[0][0]['accept_time'];
+$admit_time=$data[0][0]['admit_time'];
+$asp_loc=$data[0][0]['asp_loc'];
+//print($user_name);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -316,16 +268,23 @@ if(isset($_POST['signin'])){
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php
+                            foreach($data[0] as $r) {
+                                ?>
                                 <tr>
                                     <td><h5>1</h5></td>
-                                    <td><h5>Raj</h5></td>
-                                    <td><h5>850</h5></td>
-                                    <td><h5>32.2342 1.1224</h5></td>
-                                    <td><h5>Ram</h5></td>
-                                    <td><h5>23</h5></td>
-                                    <td><h5>20.3454 23.3443</h5></td>
-                                    <td><h5>Busy</h5></td>
+                                    <td><h5><?php echo $r['driver_name'] ?></h5></td>
+                                    <td><h5><?php echo $r['driver_id'] ?></h5></td>
+                                    <td><h5><?php echo $r['driver_loc'] ?>4</h5></td>
+                                    <td><h5><?php echo $r['user_name'] ?>Ram</h5></td>
+                                    <td><h5><?php echo $r['user_id'] ?></h5></td>
+                                    <td><h5><?php echo $r['user_loc'] ?></h5></td>
+                                    <td><h5><?php echo $r['status'] ?></h5></td>
                                 </tr>
+                                <?php
+
+                            }
+                            ?>
                             </tbody>
                         </table>
 

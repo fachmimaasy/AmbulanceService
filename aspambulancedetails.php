@@ -1,3 +1,41 @@
+<?php
+use backendless\Backendless;
+use backendless\model\BackendlessUser;
+use backendless\model\Data;
+
+include "PHP-SDK-master/backendless/autoload.php";
+
+Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
+$user = Backendless::$Persistence->of( 'ambulance')->find( );
+$array=(array)$user;
+//print_r($array);
+
+
+// echo($array['data']);
+$data=(array_column($array, 'data'));
+//$offset=(array_column($data, 0));
+// $offset1=(array_column($offset, 1));
+//echo "<br><br>";
+//print($data[0][0]['user_name']);
+$count=count($data[0]);
+//echo "<br><br>";
+//echo "<br><br>";
+
+//$user_id=$data[0][0]['a_id'];
+//$user_name=$data[0][0]['a_model'];
+//$user_loc=$data[0][0]['a_type'];
+////$req_time=$data[0][0]['user_time'];
+//$hos_name=$data[0][0]['user_name'];
+//$hos_loc=$data[0][0]['hos_loc'];
+//$driver_loc=$data[0][0]['driver_loc'];
+//$driver_id=$data[0][0]['driver_id'];
+//$driver_name=$data[0][0]['driver_name'];
+//$accept_time=$data[0][0]['accept_time'];
+//$admit_time=$data[0][0]['admit_time'];
+//$asp_loc=$data[0][0]['asp_loc'];
+//print($user_name);
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -231,14 +269,21 @@
                     </tr>
                     </thead>
                     <tbody>
+
+                    <?php
+                    foreach($data[0] as $r) {
+                    ?>
                     <tr>
-                        <td><h5>1</h5></td>
-                        <td><h5>Van</h5></td>
-                        <td><h5>TN 04 354</h5></td>
-                        <td><h5>Tertiary</h5></td>
-                        <td><h5>3</h5></td>
-                        <td><h5>Busy</h5></td>
+                        <td><h5><?php echo $r['a_id'] ?></h5></td>
+                        <td><h5><?php echo $r['a_model'] ?></h5></td>
+                        <td><h5><?php echo $r['a_vehicleno'] ?></h5></td>
+                        <td><h5><?php echo $r['a_type'] ?></h5></td>
+                        <td><h5><?php echo $r['acapacity'] ?></h5></td>
+                        <td><h5><?php echo $r['status'] ?></h5></td>
                     </tr>
+                    <?php
+                    }
+                    ?>
                     </tbody>
                 </table>
 
