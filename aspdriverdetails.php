@@ -6,7 +6,7 @@ use backendless\model\BackendlessUser;
 use backendless\model\Data;
 include "PHP-SDK-master/backendless/autoload.php";
 Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
-$user = Backendless::$Persistence->of( 'user_history')->find( );
+$user = Backendless::$Persistence->of( 'driver')->find( );
 $array=(array)$user;
 //print_r($array);
 
@@ -247,15 +247,25 @@ $data=(array_column($array, 'data'));
                     </thead>
                     <tbody>
                     <tr>
-                        <td><h5>1</h5></td>
-                        <td><h5>Ram</h5></td>
-                        <td><h5>TN 04 354</h5></td>
-                        <td><h5>Male</h5></td>
-                        <td><h5>03-08-1899</h5></td>
-                        <td><h5>11</h5></td>
-                        <td><h5>N0:3, anna street,Gandhi Nagar,Chennai,Tamil Nadu</h5></td>
-                        <td><h5>9876543210</h5></td>
-                        <td><h5>5% yrs Exp</h5></td>
+                         <?php
+                    foreach($data[0] as $r) {
+                    ?>
+                    <tr>
+                       <td><h5><?php echo $r['d_id'] ?></h5></td>
+                        <td><h5><?php echo $r['dname'] ?></h5></td>
+                        <td><h5><?php echo $r['d_licenceno'] ?></h5></td>
+                        <td><h5><?php echo $r['gender'] ?></h5></td>
+                        <td><h5><?php echo $r['dob'] ?></h5></td>
+                        <td><h5><?php echo $r['age'] ?></h5></td>
+                        <td><h5><?php echo $r['address'] ?></h5></td>
+                        <td><h5><?php echo $r['phno'] ?></h5></td>
+                        <td><h5><?php echo $r['exp'] ?></h5></td>
+                        
+                    </tr>
+                    <?php
+                    }
+                    ?>
+                        
                     </tr>
                     </tbody>
                 </table>
