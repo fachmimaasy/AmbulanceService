@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 use backendless\Backendless;
@@ -14,7 +15,7 @@ $array=(array)$user;
 $data=(array_column($array, 'data'));
 $user1 = Backendless::$Persistence->of( 'userdata')->find( );
 $array1=(array)$user1;
-$datas=(array_column($array1, 'datas'));
+$datas=(array_column($array1, 'data'));
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -224,7 +225,7 @@ $datas=(array_column($array1, 'datas'));
 //                            $query->setWhereClause("uid = '.$uid.'");
 
 //                            $r = Backendless::$Persistence->of( 'userdata' )->find( $query );
-                    foreach($datas[0][0] as $r) {
+                    foreach($datas[0] as $r) {
                         if($r['uid']==$uid) {
                             ?>
                             <tr>
