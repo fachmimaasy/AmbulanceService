@@ -17,23 +17,23 @@ $data=(array_column($array, 'data'));
 // $offset1=(array_column($offset, 1));
 //echo "<br><br>";
 //print($data[0][0]['user_name']);
-$count=count($data[0]);
+//$count=count($data[0]);
 //echo "<br><br>";
 //echo "<br><br>";
 
-$user_id=$data[0][0]['user_name'];
-$user_name=$data[0][0]['user_name'];
-$user_loc=$data[0][0]['user_loc'];
-//$req_time=$data[0][0]['user_time'];
-$hos_name=$data[0][0]['user_name'];
-$hos_loc=$data[0][0]['hos_loc'];
-$driver_loc=$data[0][0]['driver_loc'];
-$driver_id=$data[0][0]['driver_id'];
-$driver_name=$data[0][0]['driver_name'];
-$accept_time=$data[0][0]['accept_time'];
-$admit_time=$data[0][0]['admit_time'];
-$asp_loc=$data[0][0]['asp_loc'];
-//print($user_name);
+// $user_id=$data[0][0]['user_name'];
+// $user_name=$data[0][0]['user_name'];
+// $user_loc=$data[0][0]['user_loc'];
+// //$req_time=$data[0][0]['user_time'];
+// $hos_name=$data[0][0]['user_name'];
+// $hos_loc=$data[0][0]['hos_loc'];
+// $driver_loc=$data[0][0]['driver_loc'];
+// $driver_id=$data[0][0]['driver_id'];
+// $driver_name=$data[0][0]['driver_name'];
+// $accept_time=$data[0][0]['accept_time'];
+// $admit_time=$data[0][0]['admit_time'];
+// $asp_loc=$data[0][0]['asp_loc'];
+// //print($user_name);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -88,7 +88,7 @@ $asp_loc=$data[0][0]['asp_loc'];
         	<!--<div class="notification">-->
                 <!--<a class="count" href="ajax/notifications.html"><span>9</span></a>-->
         	<!--</div>-->
-            <div class="userinfo">
+            <div class="userinfo">  
             	<img src="images/thumbs/avatar.png" alt="" />
                 <span>Kiran Raaj</span>
             </div><!--userinfo-->
@@ -275,8 +275,8 @@ $asp_loc=$data[0][0]['asp_loc'];
                                     <td><h5>1</h5></td>
                                     <td><h5><?php echo $r['driver_name'] ?></h5></td>
                                     <td><h5><?php echo $r['driver_id'] ?></h5></td>
-                                    <td><h5><?php echo $r['driver_loc'] ?>4</h5></td>
-                                    <td><h5><?php echo $r['user_name'] ?>Ram</h5></td>
+                                    <td><h5><?php echo $r['driver_loc'] ?></h5></td>
+                                    <td><h5><?php echo $r['user_name'] ?></h5></td>
                                     <td><h5><?php echo $r['user_id'] ?></h5></td>
                                     <td><h5><?php echo $r['user_loc'] ?></h5></td>
                                     <td><h5><?php echo $r['status'] ?></h5></td>

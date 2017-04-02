@@ -1,6 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+use backendless\Backendless;
+use backendless\model\BackendlessUser;
+use backendless\model\Data;
+include "PHP-SDK-master/backendless/autoload.php";
+Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
+$user = Backendless::$Persistence->of( 'user_history')->find( );
+$array=(array)$user;
+//print_r($array);
 
+
+// echo($array['data']);
+$data=(array_column($array, 'data'));
+?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

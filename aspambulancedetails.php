@@ -1,4 +1,5 @@
 <?php
+$t=time();
 use backendless\Backendless;
 use backendless\model\BackendlessUser;
 use backendless\model\Data;
@@ -6,34 +7,86 @@ use backendless\model\Data;
 include "PHP-SDK-master/backendless/autoload.php";
 
 Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
-$user = Backendless::$Persistence->of( 'ambulance')->find( );
-$array=(array)$user;
-//print_r($array);
+/**
+* 
+*/
+  $user = Backendless::$Persistence->of( 'ambulance')->find( );
+ $array=(array)$user;
+   $data=(array_column($array, 'data'));
+  if(isset($_POST['add_ambulance']))
+  {
+     echo $vehicleno=$_POST['a_vehicleno'];
+    echo $model=$_POST['a_model'];
+     echo  $type=$_POST['a_type'];
+    echo  $capacity=$_POST['acapacity'];
 
 
-// echo($array['data']);
-$data=(array_column($array, 'data'));
-//$offset=(array_column($data, 0));
-// $offset1=(array_column($offset, 1));
-//echo "<br><br>";
-//print($data[0][0]['user_name']);
-$count=count($data[0]);
-//echo "<br><br>";
-//echo "<br><br>";
+ class  ambulance{  
+    private $a_vehicleno;
+    private $a_model;
+    private $a_type;
+    private $acapacity;
+  
+    public function getA_vehicle() {
+        return $this->a_vehicleno;
+    }
+ 
+    public function setA_vehicle( $a_vehicleno ) {
+        $this->a_vehicleno = $a_vehicleno;
+    }
+ 
+    public function getA_model() {
+        return $this->model;
+    }
+ 
+    public function setA_model( $a_model ) {
+        $this->a_model = $a_model;
 
-//$user_id=$data[0][0]['a_id'];
-//$user_name=$data[0][0]['a_model'];
-//$user_loc=$data[0][0]['a_type'];
-////$req_time=$data[0][0]['user_time'];
-//$hos_name=$data[0][0]['user_name'];
-//$hos_loc=$data[0][0]['hos_loc'];
-//$driver_loc=$data[0][0]['driver_loc'];
-//$driver_id=$data[0][0]['driver_id'];
-//$driver_name=$data[0][0]['driver_name'];
-//$accept_time=$data[0][0]['accept_time'];
-//$admit_time=$data[0][0]['admit_time'];
-//$asp_loc=$data[0][0]['asp_loc'];
-//print($user_name);
+    }
+   public function getA_type() {
+        return $this->type;
+    }
+ 
+    public function setA_type( $a_type ) {
+        $this->a_type = $a_type;
+    }
+ 
+    public function getAcapacity() {
+        return $this->capacity;
+    }
+ 
+    public function setAcapacity( $acapacity ) {
+        $this->acapacity = $acapacity;
+
+    }
+         
+}
+
+  $can = new ambulance();
+  $can->setA_vehicle( $vehicleno);
+  $can->setA_model($model );
+  $can->setA_type($type);
+  $can->setAcapacity($capacity);
+
+  $saved_contact = Backendless::$Persistence->save( $can );
+    header("location: aspambulancedetails.php");
+
+}
+  
+// $can->setA_id("sdjcsdo");
+// $can->seta_type("ijfvfdv");
+//  // // save object
+//  $saved_contact = Backendless::$Persistence->save( $can );
+// {{}}
+  // $array1=(array)$saved_contact;
+  // $data1=(array_column($array1, 'data'));
+  // $data1[0][0]['a_id']="ndjsnks";
+  // print_r($saved_contact);
+
+
+ // header("location: aspambulancedetails.php");
+// }
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -260,9 +313,9 @@ $count=count($data[0]);
                     <!--</colgroup>-->
                     <thead>
                     <tr>
-                        <th class="head0"><h4>Ambulance Id</h4></th>
+                     <!--    <th class="head0"><h4>Ambulance Id</h4></th> />-->
                         <th class="head1"><h4>Ambulance Model</h4></th>
-                        <th class="head0"><h4>Ambulance No.</h4></th>
+                        <th class="head0"><h4>Ambulance No</h4></th>
                         <th class="head1"><h4>Ambulance Type</h4></th>
                         <th class="head0"><h4>Capacity</h4></th>
                         <th class="head1"><h4>Status</h4></th>
@@ -274,7 +327,7 @@ $count=count($data[0]);
                     foreach($data[0] as $r) {
                     ?>
                     <tr>
-                        <td><h5><?php echo $r['a_id'] ?></h5></td>
+                     <!--   <td><h5><?php echo $r['a_id'] ?></h5></td>/>-->
                         <td><h5><?php echo $r['a_model'] ?></h5></td>
                         <td><h5><?php echo $r['a_vehicleno'] ?></h5></td>
                         <td><h5><?php echo $r['a_type'] ?></h5></td>
@@ -569,32 +622,32 @@ $count=count($data[0]);
 
         <div id="addambulance" class="subcontent" style="display: none;">
 
-            <form class="stdform " action="#" method="post">
+            <form class="stdform " action="aspambulancedetails.php" method="post">
                 <h4>
                 <p>
                     <label>Ambulance No.</label>
-                    <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                    <span class="field"><input type="text" name="a_vehicleno" class="smallinput" /></span>
                     <small class="desc">Enter the Ambulance vehicle number.</small>
                 </p>
                 <p>
                     <label>Ambulance Model</label>
-                    <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                    <span class="field"><input type="text" name="a_model" class="smallinput" /></span>
                     <small class="desc">Enter the Ambulance Model.</small>
                 </p>
                 <p>
                     <label>Ambulance Type</label>
-                    <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                    <span class="field"><input type="text" name="a_type" class="smallinput" /></span>
                     <small class="desc">Enter the Ambulance Type.</small>
                 </p>
                 <p>
                     <label>Capacity</label>
-                    <span class="field"><input type="text" name="input1" class="smallinput" /></span>
+                    <span class="field"><input type="text" name="acapacity" class="smallinput" /></span>
                     <small class="desc">Enter the Ambulance Capacity.</small>
                 </p>
                 <br clear="all" /><br />
 
                 <p class="stdformbutton">
-                    <button class="submit radius2">Add Ambulance</button>
+                    <button name = "add_ambulance" class="submit radius2">Add Ambulance</button>
                     <input type="reset" class="reset radius2" value="Reset  " />
                 </p>
                 </h4>
@@ -610,10 +663,18 @@ $count=count($data[0]);
                 <span class="field">
                             <select name="selection" id="selection">
                             	<option value="">Select One</option>
-                                <option value="1">TN 09 0990</option>
-                                <option value="2">TN 45 4545</option>
-                                <option value="3">TN 34 3432</option>
-                                <option value="4">TN 34 3454</option>
+                             
+                               <?php
+                               $i= 1;
+                                foreach ($data[0] as $key) {
+                                   
+                                    ?>
+  
+
+
+                               <option><?php echo $key['a_vehicleno']?></option>
+                             <?php  }
+                               ?>
                             </select>
                             </span>
             </p>
@@ -632,10 +693,18 @@ $count=count($data[0]);
                 <span class="field">
                             <select name="selection" id="selection1">
                             	<option value="">Select One</option>
-                                <option value="1">TN 09 0990</option>
-                                <option value="2">TN 45 4545</option>
-                                <option value="3">TN 34 3432</option>
-                                <option value="4">TN 34 3454</option>
+                             
+                               <?php
+                               $i= 1;
+                                foreach ($data[0] as $key) {
+                                   
+                                    ?>
+  
+
+
+                               <option value =<?php echo $key['a_vehicleno'];?>><?php echo $key['a_vehicleno']?></option>
+                             <?php  }
+                               ?>
                             </select>
                             </span>
             </p>

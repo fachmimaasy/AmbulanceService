@@ -106,12 +106,12 @@ Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E
                 </div><!--avatar-->
                 <div class="userdata">
                     <h4>Akash Karthick</h4>
-                    <span class="email">karthickakash17@gmail.com</span>
+                    <span class="email">karthickakash17@gmail.com</span>s
                     <ul>
                         <!-- <li><a href="editprofile.html">Edit Profile</a></li> -->
                         <li><a href="accountsettings.html">Account Settings</a></li>
                         <!-- <li><a href="help.html">Help</a></li> -->
-                        <li><a href="index.html">Sign Out</a></li>
+                        <li><a href="index.php">Sign Out</a></li>
                     </ul>
                 </div><!--userdata-->
             </div><!--userinfodrop-->
