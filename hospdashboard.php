@@ -3,16 +3,18 @@ session_start();
 use backendless\Backendless;
 use backendless\model\BackendlessUser;
 use backendless\model\Data;
-$_SESSION['ownerid'];
+use backendless\services\persistence;
+$d=$_SESSION['ownerid'];
 include "PHP-SDK-master/backendless/autoload.php";
+include "PHP-SDK-master/backendless/src/services/persistence/BackendlessDataQuery.php";
 
 Backendless::initApp('BCDBFE65-5A5E-801F-FF67-FEAF8F20A400', 'DE196C2F-B518-3F6E-FFE6-E6516DF36C00', 'v1');
-$user = Backendless::$Persistence->of( 'userdata')->find( );
+$user = Backendless::$Persistence->of( 'user_history')->find( );
 $array=(array)$user;
 $data=(array_column($array, 'data'));
 $user1 = Backendless::$Persistence->of( 'userdata')->find( );
 $array1=(array)$user1;
-$data1=(array_column($array, 'data1'));
+$datas=(array_column($array1, 'datas'));
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -209,24 +211,40 @@ $data1=(array_column($array, 'data1'));
                     <tbody>
 
                     <?php
-                    foreach($data[0] as $r) {
-                        ?>
-                        <tr>
-                            <td><h5><?php echo $r['uid'] ?></h5></td>
-                            <td><h5><?php echo $r['uname'] ?></h5></td>
-                            <td><h5><?php echo $r['bloodgroup'] ?></h5></td>
-                            <td><h5><?php echo $r['gender'] ?></h5></td>
-                            <td><h5><?php echo $r['udob'] ?></h5></td>
-                            <td><h5><?php echo $r['udiet'] ?></h5></td>
-                            <td><h5><?php echo $r['uaddiction'] ?></h5></td>
-                            <td><h5><?php echo $r['uphone_num'] ?></h5></td>
-                            <td><h5><?php echo $r['surgeries'] ?></h5></td>
-                            <td><h5><?php echo $r['medical_illness'] ?></h5></td>
-                            <td><h5><?php echo $r['medication'] ?></h5></td>
-                            <td><h5><?php echo $r['contact_mem'] ?></h5></td>
-                            <td><h5><?php echo $r['marital_status'] ?></h5></td>
-                        </tr>
-                        <?php
+                    foreach($data[0] as $rc) {
+                        if($rc['hos_id']==$d) {
+                            $uid=$rc['user_id'];
+//                            use backendless\Backendless;
+//                            use backendless\model\BackendlessUser;
+//                            use backendless\model\Data;
+//                            include "PHP-SDK-master/backendless/autoload.php";
+
+
+//                            $query = BackendlessDataQuery();
+//                            $query->setWhereClause("uid = '.$uid.'");
+
+//                            $r = Backendless::$Persistence->of( 'userdata' )->find( $query );
+                    foreach($datas[0][0] as $r) {
+                        if($r['uid']==$uid) {
+                            ?>
+                            <tr>
+                                <td><h5><?php echo $r["uid"] ?></h5></td>
+                                <td><h5><?php echo $r["uname"] ?></h5></td>
+                                <td><h5><?php echo $r["bloodgroup"] ?></h5></td>
+                                <td><h5><?php echo $r["gender"] ?></h5></td>
+                                <td><h5><?php echo $r["udob"] ?></h5></td>
+                                <td><h5><?php echo $r["udiet"] ?></h5></td>
+                                <td><h5><?php echo $r["uaddiction"] ?></h5></td>
+                                <td><h5><?php echo $r["uphone_num"] ?></h5></td>
+                                <td><h5><?php echo $r["surgeries"] ?></h5></td>
+                                <td><h5><?php echo $r["medical_illness"] ?></h5></td>
+                                <td><h5><?php echo $r["medication"] ?></h5></td>
+                                <td><h5><?php echo $r["contact_mem"] ?></h5></td>
+                                <td><h5><?php echo $r["marital_status"] ?></h5></td>
+                            </tr>
+                            <?php
+                        }}
+                        }
                     }
                     ?>
                     </tbody>

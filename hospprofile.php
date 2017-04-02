@@ -200,34 +200,43 @@ $data=(array_column($array, 'data'));
 <!--            </form>-->
             <div id="hospitaldetails" class="subcontent">
             <form class="stdform stdform2" method="post" action="#">
-                <p>
-                    <label>Hospital Name : </label>
-                    <span class="field"><?php echo $data[0]['name'] ?></span>
-                </p>
+                <?php
+                foreach ($data[0] as $r){
+//                    echo $r['hid'];
+//                    echo "break";
+//                    echo $d;
+                if($d==$r['hid']) {
+                    ?>
+                    <p>
+                        <label>Hospital Name : </label>
+                        <span class="field"><?php echo $r['name'] ?></span>
+                    </p>
 
-                <p>
-                    <label>Address : </label>
-                    <span class="field">ASDAS asdASD sadASDASD asdasd</span>
-                </p>
-                <p>
-                    <label>Type : </label>
-                    <span class="field">24Hrs Speciality Hospital</span>
-                </p>
-                <p>
-                    <label>Capacity : </label>
-                    <span class="field">100 peoples</span>
-                </p>
+                    <p>
+                        <label>Address : </label>
+                        <span class="field"><?php echo $r['address'] ?></span>
+                    </p>
+                    <p>
+                        <label>Type : </label>
+                        <span class="field"><?php echo $r['type'] ?></span>
+                    </p>
+                    <p>
+                        <label>Capacity : </label>
+                        <span class="field"><?php echo $r['capacity'] ?></span>
+                    </p>
 
-                <p>
-                    <label>Specialites : </label>
-                    <span class="field">ASDASD,ASDASD,ASDFASF,ASFASF.</span>
-                </p>
-                <p>
-                    <label>Contact No : </label>
-                    <span class="field">9</span>
-                </p>
+                    <p>
+                        <label>Specialites : </label>
+                        <span class="field"><?php echo $r['speciality'] ?></span>
+                    </p>
+                    <p>
+                        <label>Contact No : </label>
+                        <span class="field"><?php echo $r['phno'] ?></span>
+                    </p>
 
-
+                    <?php
+                }}
+                ?>
             </form>
 <!--            <table cellpadding="0" cellspacing="0" border="0" class="stdtable overviewtable">-->
 <!--                <tr>-->

@@ -63,9 +63,9 @@ $user_status=$array["user_status"];
     $array=(array)$user;
     $data=(array_column($array, 'data'));
 
-    print_r($data[0][0]['ownerId']);
+    print_r($data[0][0]['id']);
 
-    $_SESSION['ownerid']=$data[0][0]['ownerId'];
+    $_SESSION['ownerid']=$data[0][0]['id'];
 //    $var=$data[0]['ownerId'];
 if($user_status=="admin")
 {
